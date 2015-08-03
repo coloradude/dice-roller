@@ -29,15 +29,14 @@ var diceRollerFour = function (numberOfDice, upperBound) {
     return dice;
 };
 
-var DiceRoller = function(numberOfSides, hand, roll, numberOfDice){
-  this.numberOfDice = numberOfDice;
-  this.hand = hand;
+var DiceRoller = function(numberOfSides){
+  var numberOfSides = numberOfSides || 6;
   this.roll = function(numberOfDice){
-    var dice = [];
+    this.hand = [];
+    var numberOfDice = numberOfDice || 1;
     for (var i = 0; i < numberOfDice; i++) {
-        dice.push(Math.floor(Math.random() * numberOfSides + 1));
+      this.hand.push(Math.floor(Math.random() * numberOfSides + 1));
     }
-    this.hand = dice;
   }
 }
 
