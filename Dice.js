@@ -28,3 +28,13 @@ var diceRollerFour = function (numberOfDice, upperBound) {
     }
     return dice;
 };
+
+var DiceRoller = function(hand, roll){
+  this.hand = hand;
+  this.roll = function(){
+    this.hand = Math.floor(Math.random() * 6 + 1);
+  }
+}
+
+var game = new DiceRoller();
+
